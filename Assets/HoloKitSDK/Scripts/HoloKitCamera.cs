@@ -170,6 +170,7 @@ namespace HoloKit
             leftEyeProjectionMatrix[0, 0] = 2.0f * near / viewportLeftInMeter.width;
             leftEyeProjectionMatrix[1, 1] = 2.0f * near / viewportLeftInMeter.height;
             leftEyeProjectionMatrix[0, 2] = (ipd - viewportLeftInMeter.width) / viewportLeftInMeter.width;
+//            leftEyeProjectionMatrix[1, 2] = (top + bottom) / viewportLeftInMeter.height;
             leftEyeProjectionMatrix[2, 2] = -(far + near) / (far - near);
             leftEyeProjectionMatrix[2, 3] = -(2.0f * far * near) / (far - near);
             leftEyeProjectionMatrix[3, 2] = -1.0f;
