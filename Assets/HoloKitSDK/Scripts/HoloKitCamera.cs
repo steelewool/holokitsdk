@@ -105,8 +105,17 @@ namespace HoloKit
         {
             holoKitOffset.gameObject.SetActive(false);
             cameraCenter.cullingMask = camCullingMask;
-            cameraCenter.clearFlags = camClearFlags;
-            cameraCenter.backgroundColor = camColor;
+            cameraRight.cullingMask = 0;
+            cameraLeft.cullingMask = 0;
+
+            if (Display.displays.Length > 1)
+            {
+                cameraCenter.SetTargetBuffers(Display.main.colorBuffer, Display.main.depthBuffer);
+            }
+            else 
+            {
+                cameraCenter.targetTexture = null;
+            }
         }
 
         private void SwitchToModeMR()
@@ -114,22 +123,32 @@ namespace HoloKit
             holoKitOffset.gameObject.SetActive(true);
             cameraRight.cullingMask = camCullingMask;
             cameraLeft.cullingMask = camCullingMask;
+            //cameraCenter.cullingMask = 0;
 
-            //cameraCenter.cullingMask = camCullingMask;
+            //cameraLeft.SetTargetBuffers(Display.main.colorBuffer, Display.main.depthBuffer);
+            //cameraRight.SetTargetBuffers(Display.main.colorBuffer, Display.main.depthBuffer);
+         //   cameraCenter.SetTargetBuffers(Display.main.colorBuffer, Display.main.depthBuffer);
+
             //cameraCenter.clearFlags = camClearFlags;
             //cameraCenter.backgroundColor = camColor;
-
-            //if (Display.displays.Length > 1) {
-            //    cameraCenter.cullingMask = camCullingMask;
-            //    cameraCenter.clearFlags = camClearFlags;
-            //    cameraCenter.backgroundColor = camColor;
-
-            //} else {
+         
+            if (Display.displays.Length > 1)
+            {
+                Display secondDisplay = Display.displays[1];
+                secondDisplay.SetRenderingResolution(Display.main.renderingWidth, Display.main.renderingHeight);
+                cameraCenter.SetTargetBuffers(secondDisplay.colorBuffer, secondDisplay.depthBuffer);
+                cameraCenter.cullingMask = camCullingMask;
+            }
+            else
+            {
                 cameraCenter.cullingMask = 0;
-                cameraCenter.clearFlags = CameraClearFlags.Color;
-                cameraCenter.backgroundColor = Color.black;    
-            //}
+                //cameraCenter.SetTargetBuffers(Display.main.colorBuffer, Display.main.depthBuffer);
+            }
+            //secondaryDisplay.SetRenderingResolution(Display.main.renderingWidth, Display.main.renderingHeight); // Resolutionはメインと一緒にする（必須じゃないよ）
+
+
         }
+       
 
         private void ChangeStartProfile()
         {

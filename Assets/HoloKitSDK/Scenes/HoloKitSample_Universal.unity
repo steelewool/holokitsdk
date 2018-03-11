@@ -433,10 +433,29 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114545716668541538, guid: 2138db16e666ba142b7b5159c019a6b8,
+    - target: {fileID: 1740667922594460, guid: 2138db16e666ba142b7b5159c019a6b8, type: 2}
+      propertyPath: m_Name
+      value: HoloKitCameraManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 20474586444188686, guid: 2138db16e666ba142b7b5159c019a6b8,
         type: 2}
-      propertyPath: brightness
-      value: 0.85
+      propertyPath: m_ClearFlags
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 20168816427855084, guid: 2138db16e666ba142b7b5159c019a6b8,
+        type: 2}
+      propertyPath: m_ClearFlags
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 20379541294079494, guid: 2138db16e666ba142b7b5159c019a6b8,
+        type: 2}
+      propertyPath: m_ClearFlags
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 20558585701327988, guid: 2138db16e666ba142b7b5159c019a6b8,
+        type: 2}
+      propertyPath: m_ClearFlags
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2138db16e666ba142b7b5159c019a6b8, type: 2}

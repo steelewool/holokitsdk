@@ -45,9 +45,9 @@ namespace Finch
 
             FinchUpdateError err = FinchUpdateError.NotInitialized;
             if (FinchSettings.HeadUpdateType == FinchHeadUpdateType.RotationUpdate)
-                err = FinchCore.Update(FinchVR.MainCamera != null ? FinchVR.MainCamera.localRotation.ToFinch() : Camera.main.transform.localRotation.ToFinch());
+                err = FinchCore.Update(FinchVR.MainCamera != null ? FinchVR.MainCamera.rotation.ToFinch() : Camera.main.transform.rotation.ToFinch());
             else if (FinchSettings.HeadUpdateType == FinchHeadUpdateType.RotationAndPositionUpdate)
-                err = FinchCore.Update(FinchVR.MainCamera.localRotation.ToFinch(), FinchVR.MainCamera.localPosition.ToFinch());
+                err = FinchCore.Update(FinchVR.MainCamera.rotation.ToFinch(), FinchVR.MainCamera.position.ToFinch());
             else
                 err = FinchCore.Update();
 

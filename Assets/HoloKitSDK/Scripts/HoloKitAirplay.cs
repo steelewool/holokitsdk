@@ -8,21 +8,25 @@ namespace HoloKit
         // Use this for initialization
         void Start()
         {
+            Display.onDisplaysUpdated += OnDisplayUpdated;
 
         }
 
-        public void OnPreRender()
+        public void OnDisplayUpdated()
         {
             if (Display.displays.Length > 1)
             {
                 Display secondDisplay = Display.displays[1];
+                secondDisplay.SetRenderingResolution(Display.main.renderingWidth, Display.main.renderingHeight);
                 GetComponent<Camera>().SetTargetBuffers(secondDisplay.colorBuffer, secondDisplay.depthBuffer);
-                Debug.LogFormat("Display {0}", Display.displays.Length);
             }
             else
             {
                 GetComponent<Camera>().SetTargetBuffers(Display.main.colorBuffer, Display.main.depthBuffer);
+
+                //cameraCenter.SetTargetBuffers(Display.main.colorBuffer, Display.main.depthBuffer);
             }
+
         }
 
         // Update is called once per frame

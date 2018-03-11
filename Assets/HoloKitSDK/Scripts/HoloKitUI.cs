@@ -81,7 +81,7 @@ namespace HoloKit
 
         private void Update()
         {
-            if (HoloKitCamera.Instance && (HoloKitCamera.Instance.cameraType != oldSeeMode 
+            if (HoloKitCamera.Instance && (HoloKitCamera.Instance.cameraType != oldSeeMode
                                            || HoloKitCamera.Instance.profileModel != oldHoloKitModel))
             {
                 Localize();

@@ -50,7 +50,7 @@ namespace HoloKit
             initialScale = GazeCursor.localScale;
         }
 
-        void Update()
+        void LateUpdate()
         {
             Transform eyeCenter = HoloKitCamera.Instance.cameraType == CameraType.AR ?
                                   HoloKitCamera.Instance.cameraCenter.transform :
