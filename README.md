@@ -10,15 +10,15 @@ HoloKitSDK is the Unity plugins to build Mixed Reality apps for HoloKit.
 
 ## Version Index
 ### HoloKit SDK v2.0 (Current version): 
-* For ARKit 2.0 and ARCore 1.3, please checkout "v2.0" branch.
+* For ARKit 2.0 and ARCore 1.3, please checkout "v2.0" tag.
 
 ### HoloKit SDK v1.5: 
-* For ARKit 1.5 and ARCore 1.0, please checkout "v1.5" branch.
+* For ARKit 1.5 and ARCore 1.0, please checkout "v1.5" tag.
 
 ### HoloKit SDK v1.0:
-* For Google Tango, please checkout "v1.0_tango" branch.
-* For Apple iOS (ARKit), please checkout "v1.0_ios" branch. 
-* For Android (ARCore), please checkout "v1.0_android" branch. 
+* For Google Tango, please checkout "v1.0_tango" tag.
+* For Apple iOS (ARKit), please checkout "v1.0_ios" tag. 
+* For Android (ARCore), please checkout "v1.0_android" tag. 
 
 ## Features 
 ### Stereoscopic rendering
