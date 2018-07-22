@@ -4,7 +4,7 @@ using UnityEngine.XR.iOS;
 using System.Text;
 using System.Collections.Generic;
 
-namespace Utils
+namespace UnityEngine.XR.iOS.Utils
 {
 	/// <summary>
 	/// Since unity doesn't flag the Vector4 as serializable, we
@@ -241,9 +241,11 @@ namespace Utils
 		public serializableUnityARLightData lightData;
 		public serializablePointCloud pointCloud;
 		public serializableUnityARMatrix4x4 displayTransform;
+		public ARWorldMappingStatus worldMappingStatus;
 
 
-		public serializableUnityARCamera( serializableUnityARMatrix4x4 wt, serializableUnityARMatrix4x4 pm, ARTrackingState ats, ARTrackingStateReason atsr, UnityVideoParams uvp, UnityARLightData lightDat, serializableUnityARMatrix4x4 dt, serializablePointCloud spc)
+		public serializableUnityARCamera( serializableUnityARMatrix4x4 wt, serializableUnityARMatrix4x4 pm, ARTrackingState ats, ARTrackingStateReason atsr, UnityVideoParams uvp, UnityARLightData lightDat, serializableUnityARMatrix4x4 dt, serializablePointCloud spc, 
+				ARWorldMappingStatus awms)
 		{
 			worldTransform = wt;
 			projectionMatrix = pm;
@@ -253,16 +255,17 @@ namespace Utils
 			lightData = lightDat;
 			displayTransform = dt;
 			pointCloud = spc;
+			worldMappingStatus = awms;
 		}
 
 		public static implicit operator serializableUnityARCamera(UnityARCamera rValue)
 		{
-			return new serializableUnityARCamera(rValue.worldTransform, rValue.projectionMatrix, rValue.trackingState, rValue.trackingReason, rValue.videoParams, rValue.lightData, rValue.displayTransform, rValue.pointCloudData);
+			return new serializableUnityARCamera(rValue.worldTransform, rValue.projectionMatrix, rValue.trackingState, rValue.trackingReason, rValue.videoParams, rValue.lightData, rValue.displayTransform, rValue.pointCloudData, rValue.worldMappingStatus);
 		}
 
 		public static implicit operator UnityARCamera(serializableUnityARCamera rValue)
 		{
-			return new UnityARCamera (rValue.worldTransform, rValue.projectionMatrix, rValue.trackingState, rValue.trackingReason, rValue.videoParams, rValue.lightData, rValue.displayTransform, rValue.pointCloud);
+			return new UnityARCamera (rValue.worldTransform, rValue.projectionMatrix, rValue.trackingState, rValue.trackingReason, rValue.videoParams, rValue.lightData, rValue.displayTransform, rValue.pointCloud, rValue.worldMappingStatus);
 		}
 
 

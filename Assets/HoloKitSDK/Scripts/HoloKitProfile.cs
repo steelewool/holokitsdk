@@ -110,7 +110,7 @@ namespace HoloKit
             eyeDistance = 0.064f,
             mrOffset = new Vector3(0f, -0.041f, -0.08f - 0.012f),
             fieldOfView = 0f,
-            distortion = 0f,
+            distortion = -0.17f,
             viewWidth = 0.058f,
             viewHeight = 0.054f,
             lensLength = 0.090f,

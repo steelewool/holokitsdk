@@ -35,9 +35,10 @@ namespace UnityEngine.XR.iOS
 		void InitializeCommandBuffer()
 		{
 			m_VideoCommandBuffer = new CommandBuffer(); 
-            m_VideoCommandBuffer.Blit(null, BuiltinRenderTextureType.CurrentActive, m_ClearMaterial);
+			m_VideoCommandBuffer.Blit(null, BuiltinRenderTextureType.CurrentActive, m_ClearMaterial);
 			GetComponent<Camera>().AddCommandBuffer(CameraEvent.BeforeForwardOpaque, m_VideoCommandBuffer);
 			bCommandBufferInitialized = true;
+
 		}
 
 		void OnDestroy()
@@ -47,7 +48,7 @@ namespace UnityEngine.XR.iOS
 			bCommandBufferInitialized = false;
 		}
 
-#if !UNITY_EDITOR
+#if !UNITY_EDITOR && UNITY_IOS
 
         public void OnPreRender()
         {
