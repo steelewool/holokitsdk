@@ -16,23 +16,17 @@ namespace UnityEngine.XR.iOS
 
         void OnDestroy()
         {
-            if (unityARAnchorManager != null)
-            {
-                unityARAnchorManager.Destroy();
-            }
+            unityARAnchorManager.Destroy ();
         }
 
         void OnGUI()
         {
-            if (unityARAnchorManager != null)
-            {
-    			IEnumerable<ARPlaneAnchorGameObject> arpags = unityARAnchorManager.GetCurrentPlaneAnchors ();
-    			foreach(var planeAnchor in arpags)
-    			{
-                    //ARPlaneAnchor ap = planeAnchor;
-                    //GUI.Box (new Rect (100, 100, 800, 60), string.Format ("Center: x:{0}, y:{1}, z:{2}", ap.center.x, ap.center.y, ap.center.z));
-                    //GUI.Box(new Rect(100, 200, 800, 60), string.Format ("Extent: x:{0}, y:{1}, z:{2}", ap.extent.x, ap.extent.y, ap.extent.z));
-                }
+			IEnumerable<ARPlaneAnchorGameObject> arpags = unityARAnchorManager.GetCurrentPlaneAnchors ();
+			foreach(var planeAnchor in arpags)
+			{
+                //ARPlaneAnchor ap = planeAnchor;
+                //GUI.Box (new Rect (100, 100, 800, 60), string.Format ("Center: x:{0}, y:{1}, z:{2}", ap.center.x, ap.center.y, ap.center.z));
+                //GUI.Box(new Rect(100, 200, 800, 60), string.Format ("Extent: x:{0}, y:{1}, z:{2}", ap.extent.x, ap.extent.y, ap.extent.z));
             }
         }
 	}
